@@ -16,7 +16,7 @@ import {
   Pie,
   Cell,
 } from 'recharts';
-import { BarChart3, TrendingUp, Compass, Award } from 'lucide-react';
+import { BarChart3, TrendingUp, Compass } from 'lucide-react';
 import { achievementsData } from '../data/achievementsData';
 import { playHover } from '../utils/sounds';
 
@@ -254,7 +254,7 @@ export const Analytics: React.FC = () => {
         </div>
 
         {/* Competencies Radar chart */}
-        <div className="lg:col-span-1 bg-glass border border-white/5 rounded-xl p-5 flex flex-col justify-between">
+        <div className="lg:col-span-3 bg-glass border border-white/5 rounded-xl p-5 flex flex-col justify-between">
           <div className="flex items-center gap-1.5 border-b border-white/5 pb-3 mb-4 font-mono text-xs font-bold text-cyan-400 select-none">
             <Compass size={14} /> SKILL_COMPASS_INDEX
           </div>
@@ -288,24 +288,6 @@ export const Analytics: React.FC = () => {
               NO SKILLS TELEMETRY INDEXED
             </div>
           )}
-        </div>
-
-        {/* Security / System logs console */}
-        <div className="lg:col-span-2 bg-glass border border-white/5 rounded-xl p-5 flex flex-col justify-between">
-          <div className="flex items-center gap-1.5 border-b border-white/5 pb-3 mb-3 font-mono text-xs font-bold text-cyan-400 select-none">
-            <Award size={14} /> SECURITY_CREDENTIALS_INTEGRITY
-          </div>
-          <div className="bg-[#05040f]/60 rounded-lg p-4 font-mono text-[10px] space-y-1.5 overflow-y-auto max-h-[220px]">
-            <div className="text-cyan-500">{">>>"} INITIALIZING SECURITY SIGNATURE MATRIX CHECKS...</div>
-            <div className="text-slate-500">[OK] Certificate signature engine online (SolidChain SHA-256)</div>
-            <div className="text-slate-500">[OK] 6 validation protocols responding: Coursera, Google, Microsoft, AWS, NPTEL, Forage</div>
-            <div className="text-slate-500">[OK] Placements integrity audit matching Trophy Room metrics</div>
-            <div className="text-slate-500">[OK] Badge wall rarity index verified against decentralized metadata</div>
-            <div className="text-purple-400">{">>>"} INTEGRITY STATUS: 100% UNCOMPROMISED</div>
-            <div className="text-slate-600">--------------------------------------------------</div>
-            <div className="text-slate-400">ACTIVE SESSION HASH: 7F8D2E9C1A0B3F4E5D...</div>
-            <div className="text-slate-400">VAULT SYNC COMPLETED: {new Date().toISOString()}</div>
-          </div>
         </div>
       </div>
     </div>
