@@ -4,6 +4,79 @@ import { playHover, playClick } from '../utils/sounds';
 import { achievementsData } from '../data/achievementsData';
 import { BookOpen, Trophy, Award, Briefcase, Flame, Sparkles } from 'lucide-react';
 
+const profiles = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/VIJAYAPANDIANT',
+    colorClass: 'hover:text-white hover:border-white hover:shadow-[0_0_12px_rgba(255,255,255,0.4)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+      </svg>
+    ),
+  },
+  {
+    name: 'LeetCode',
+    url: 'https://leetcode.com/u/hackervj18/',
+    colorClass: 'hover:text-[#ffa116] hover:border-[#ffa116] hover:shadow-[0_0_12px_rgba(255,161,22,0.45)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M16.102 17.93l-2.69 2.607c-.466.452-1.111.97-1.826.97-.715 0-1.36-.52-1.826-.97L3.51 14.3a3.48 3.48 0 0 1 0-4.92l6.25-6.052a.792.792 0 0 1 1.12.001l1.12 1.12c.31.31.309.813-.002 1.123L5.8 11.754a1.864 1.864 0 0 0 0 2.635l6.25 6.052c.237.23.518.423.82.423.3 0 .582-.193.819-.423l2.413-2.34a.79.79 0 0 1 1.12 0l1.12 1.12a.792.792 0 0 1-.001 1.12zM20.49 13.69l-1.12 1.12a.792.792 0 0 1-1.12-.001l-6.25-6.052a1.864 1.864 0 0 0-2.636 0L8.147 9.873a.79.79 0 0 1-1.12 0L5.908 8.75a.792.792 0 0 1 .001-1.12l1.205-1.168a3.48 3.48 0 0 1 4.92 0l6.25 6.052c.466.452 1.111.97 1.826.97.715 0 1.36-.52 1.826-.97l1.12-1.12a.792.792 0 0 1 1.12.001l1.12 1.12a.792.792 0 0 1-.001 1.12l-2.413 2.34c-.237.23-.518.423-.82.423-.3 0-.582-.193-.819-.423z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'GeeksforGeeks',
+    url: 'https://www.geeksforgeeks.org/profile/vijayapandiant11',
+    colorClass: 'hover:text-[#308b50] hover:border-[#308b50] hover:shadow-[0_0_12px_rgba(48,139,80,0.45)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M12.117 12.005c0-1.896.11-3.134.332-3.712.222-.577.625-.97 1.208-1.176a3.5 3.5 0 0 1 1.22-.206c.463 0 .973.082 1.53.247v1.896a6.3 6.3 0 0 0-1.077-.082c-.37 0-.643.08-.82.238-.175.16-.297.4-.365.722-.068.32-.102.822-.102 1.505v.566c0 1.298.118 2.143.353 2.535.235.39.697.587 1.385.587.278 0 .584-.031.921-.093v1.865a7.5 7.5 0 0 1-1.63.144c-.792 0-1.428-.18-1.908-.54-.48-.361-.796-.897-.948-1.607-.152-.71-.228-1.782-.228-3.215v-.867zm-3.275 1.713c.221.578.625.97 1.208 1.176.584.206.99.309 1.22.309.463 0 .973-.082 1.53-.247v-1.896a6.3 6.3 0 0 0-1.077.082c-.37 0-.643-.08-.82-.238-.175-.16-.297-.4-.365-.722-.068-.32-.102-.822-.102-1.505v-.566c0-1.298.118-2.143.353-2.535.235-.39.697-.587 1.385-.587.278 0 .584.031.921.093V5.42a7.5 7.5 0 0 0-1.63-.144c-.792 0-1.428.18-1.908.54-.48.361-.796.897-.948 1.607-.152.71-.228 1.782-.228 3.215v.867c0 1.896.11 3.134.332 3.712z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Twitter (X)',
+    url: 'https://x.com/Vijayapand33371',
+    colorClass: 'hover:text-white hover:border-white hover:shadow-[0_0_12px_rgba(255,255,255,0.4)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'CodeChef',
+    url: 'https://www.codechef.com/users/vijay_code07',
+    colorClass: 'hover:text-[#d3a275] hover:border-[#d3a275] hover:shadow-[0_0_12px_rgba(211,162,117,0.45)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M12 3a4.5 4.5 0 0 0-4.3 3.2 3.5 3.5 0 0 0-.2 6.6v4.7a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5v-4.7a3.5 3.5 0 0 0-.2-6.6A4.5 4.5 0 0 0 12 3zm-3.5 13v-1h7v1zm0 2v-1h7v1z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Codeforces',
+    url: 'https://codeforces.com/profile/vijayapandian112007',
+    colorClass: 'hover:text-[#318dec] hover:border-[#318dec] hover:shadow-[0_0_12px_rgba(49,141,236,0.45)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M4.5 12h3V21h-3z M10.5 3h3V21h-3z M16.5 7.5h3V21h-3z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'HackerRank',
+    url: 'https://www.hackerrank.com/profile/vijayapandian111',
+    colorClass: 'hover:text-[#2ec866] hover:border-[#2ec866] hover:shadow-[0_0_12px_rgba(46,200,102,0.45)]',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M10.875 16.7h2.25v-2.45h1.75v2.45h2.25V7.3h-2.25v2.45h-1.75V7.3h-2.25v9.4z" />
+      </svg>
+    ),
+  },
+];
+
 interface CategoryNode {
   name: 'Internships' | 'Hackathons' | 'Courses' | 'Workshops' | 'Competitions' | 'Badges';
   icon: React.ComponentType<any>;
@@ -373,21 +446,64 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full lg:w-auto flex flex-col border border-cyan-500/20 bg-slate-950/65 backdrop-blur-md rounded-xl px-5 py-3 font-mono text-[11px] text-slate-300 gap-1.5 tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.06)] relative overflow-hidden"
+          className="w-full lg:w-[480px] flex flex-col border border-cyan-500/20 bg-slate-950/65 backdrop-blur-md rounded-xl px-5 py-3.5 font-mono text-[11px] text-slate-300 gap-2.5 tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.06)] relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
-          <div className="flex justify-between gap-6 border-b border-white/10 pb-1.5">
-            <span className="text-cyan-400 font-bold text-glow-cyan">OPERATOR: VIJAYAPANDIAN T</span>
-            <span className="text-purple-400">B.E. CSE (PRE-FINAL)</span>
+          
+          <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+            {/* Avatar Frame with Cyber Effects */}
+            <div className="relative flex-shrink-0 group">
+              {/* Outer cyber rotating dashed ring */}
+              <div className="absolute inset-0 -m-1.5 rounded-full border border-dashed border-cyan-500/40 animate-[spin_30s_linear_infinite] pointer-events-none" />
+              {/* Pulsing neon outer circle */}
+              <div className="absolute inset-0 -m-1 rounded-full border border-cyan-400/20 group-hover:border-cyan-400/40 transition-colors pointer-events-none" />
+              {/* Image Container with Scanline effect */}
+              <div className="relative w-[76px] h-[76px] rounded-full overflow-hidden border-2 border-cyan-400/30 bg-slate-950 shadow-[0_0_15px_rgba(6,182,212,0.2)] hologram-scan select-none">
+                <img 
+                  src="/avatar.png" 
+                  alt="Operator Avatar" 
+                  className="w-full h-full object-cover scale-105 transition-transform duration-500 group-hover:scale-115"
+                />
+                <div className="absolute inset-0 bg-cyan-900/10 pointer-events-none mix-blend-overlay" />
+              </div>
+            </div>
+
+            {/* Operator Telemetry Information */}
+            <div className="flex-1 w-full flex flex-col gap-1.5 text-center sm:text-left">
+              <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-1 border-b border-white/10 pb-1.5">
+                <span className="text-cyan-400 font-bold text-glow-cyan text-[12px]">OPERATOR: VIJAYAPANDIAN T</span>
+                <span className="text-purple-400 text-[10px]">B.E. CSE (PRE-FINAL)</span>
+              </div>
+              <div className="text-slate-200 text-[10px] sm:text-[11px]">INSTITUTION: SRM Easwari Engineering College</div>
+              <div className="flex justify-between gap-4 text-slate-300">
+                <span>LOC: Chennai, Tamil Nadu</span>
+                <span>AGE: 18 (11.07.2007)</span>
+              </div>
+            </div>
           </div>
-          <div className="text-slate-200">INSTITUTION: SRM Easwari Engineering College</div>
-          <div className="flex justify-between gap-4">
-            <span>LOC: Chennai, Tamil Nadu</span>
-            <span>AGE: 18 (11.07.2007)</span>
-          </div>
-          <div className="flex flex-col md:flex-row justify-between gap-x-6 gap-y-0.5 border-t border-white/10 pt-1.5 text-slate-400 text-[10px]">
+
+          {/* Contact Details Grid */}
+          <div className="flex flex-col md:flex-row justify-between gap-x-6 gap-y-0.5 border-t border-white/10 pt-2 text-slate-400 text-[10px]">
             <span>EMAIL: vijayapandian112007@gmail.com</span>
             <span>PH: +91 8610554060</span>
+          </div>
+
+          {/* Coding & Social Profiles Grid */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-2 border-t border-white/10">
+            <span className="text-[10px] text-cyan-500/80 mr-1 select-none font-bold">PROFILES:</span>
+            {profiles.map((profile) => (
+              <a
+                key={profile.name}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playClick()}
+                title={profile.name}
+                className={`w-[26px] h-[26px] rounded-md flex items-center justify-center border border-white/10 bg-white/5 text-slate-400 transition-all duration-200 cursor-pointer ${profile.colorClass}`}
+              >
+                {profile.icon}
+              </a>
+            ))}
           </div>
         </motion.div>
       </div>
