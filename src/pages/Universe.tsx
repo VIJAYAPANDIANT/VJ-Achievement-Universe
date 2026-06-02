@@ -474,10 +474,7 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
                 <span className="text-purple-400 text-[10px]">B.E. CSE (PRE-FINAL)</span>
               </div>
               <div className="text-slate-200 text-[10px] sm:text-[11px]">INSTITUTION: SRM Easwari Engineering College</div>
-              <div className="flex justify-between gap-4 text-slate-300">
-                <span>LOC: Chennai, Tamil Nadu</span>
-                <span>AGE: 18 (11.07.2007)</span>
-              </div>
+              <div className="text-slate-300 text-[10px] sm:text-[11px]">LOC: Chennai, Tamil Nadu</div>
             </div>
           </div>
 
