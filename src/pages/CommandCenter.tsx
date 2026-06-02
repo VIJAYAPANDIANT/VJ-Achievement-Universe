@@ -480,7 +480,7 @@ export const CommandCenter: React.FC = () => {
                     </div>
                     <div className="flex justify-between text-[9px] text-slate-500 mt-2">
                       <span>NEXT RANK AT 15,000 XP</span>
-                      <span className="text-cyan-400 animate-pulse">LEVEL UP PROGRESSION ACTIVE</span>
+                      <span className="text-cyan-400 animate-pulse">83.6% LEVEL COMPLETED</span>
                     </div>
                   </div>
                 </div>
@@ -495,27 +495,14 @@ export const CommandCenter: React.FC = () => {
                     <span className="text-[9px] px-2 py-0.5 bg-emerald-950/30 border border-emerald-500/25 rounded text-emerald-400 font-bold tracking-widest animate-pulse">MISSION STATUS: ACTIVE</span>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {objectives.map((obj, idx) => (
-                      <div key={idx} className="flex flex-col gap-1.5">
-                        <div className="flex justify-between text-[11px]">
-                          <span className="text-slate-200 font-bold flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                            {obj.name}
-                          </span>
-                          <span className="text-slate-400 font-bold uppercase tracking-wider">
-                            {obj.status}
-                          </span>
-                        </div>
-                        {/* Progress Bar */}
-                        <div className="h-2 w-full bg-slate-950/80 rounded-full border border-white/5 overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: `${obj.progress}%` }}
-                            transition={{ duration: 1.2, delay: idx * 0.1 }}
-                            className={`h-full rounded-full bg-gradient-to-r ${obj.color}`}
-                          />
-                        </div>
+                      <div 
+                        key={idx} 
+                        className="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-slate-950/45 hover:border-cyan-500/25 hover:bg-slate-950/70 transition-all duration-200"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-neon-cyan animate-pulse" />
+                        <span className="text-slate-200 text-[11px] font-bold font-mono tracking-wider">{obj.name}</span>
                       </div>
                     ))}
                   </div>
