@@ -480,7 +480,7 @@ export const CommandCenter: React.FC = () => {
                     </div>
                     <div className="flex justify-between text-[9px] text-slate-500 mt-2">
                       <span>NEXT RANK AT 15,000 XP</span>
-                      <span className="text-cyan-400 animate-pulse">83.6% LEVEL COMPLETED</span>
+                      <span className="text-cyan-400 animate-pulse">LEVEL UP PROGRESSION ACTIVE</span>
                     </div>
                   </div>
                 </div>
@@ -503,8 +503,8 @@ export const CommandCenter: React.FC = () => {
                             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
                             {obj.name}
                           </span>
-                          <span className="text-slate-400">
-                            {obj.status} (<strong className="text-white">{obj.progress}%</strong>)
+                          <span className="text-slate-400 font-bold uppercase tracking-wider">
+                            {obj.status}
                           </span>
                         </div>
                         {/* Progress Bar */}
