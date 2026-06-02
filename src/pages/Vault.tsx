@@ -100,7 +100,7 @@ export const Vault: React.FC<VaultProps> = ({ initialCategory, onSelectAchieveme
   }, [selectedCategory, searchQuery, selectedIssuers, selectedSkills]);
 
   // Categories list
-  const categories = ['Courses', 'Internships', 'Hackathons', 'Workshops', 'Competitions'];
+  const categories = ['Courses', 'Internships', 'Hackathons', 'Workshops'];
 
   // Platform/Issuer Icons/Theme colors
   const getCardTheme = (issuer: string) => {
