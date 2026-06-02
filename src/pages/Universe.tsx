@@ -361,30 +361,43 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
       ctx.arc(x, y, nodeSize, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Draw icon symbol manually inside node
-      ctx.fillStyle = '#ffffff';
-      ctx.font = `bold ${Math.floor(16 * zScale)}px Space Grotesk`;
+      // Draw sleek glass capsule badge for the planet label to make it 100% readable
+      const labelText = node.name.toUpperCase();
+      ctx.font = `${isHovered ? 'bold' : 'normal'} 11px monospace`;
+      const textWidth = ctx.measureText(labelText).width;
+      const padX = 8;
+      const padY = 4;
+      const rectW = textWidth + padX * 2;
+      const rectH = 11 + padY * 2;
+      const rectX = x - rectW / 2;
+      const rectY = y + nodeSize + 12;
+
+      ctx.save();
+      // Glass capsule backing
+      ctx.fillStyle = isHovered ? 'rgba(6, 182, 212, 0.25)' : 'rgba(15, 12, 35, 0.75)';
+      ctx.strokeStyle = isHovered ? node.color : 'rgba(255, 255, 255, 0.15)';
+      ctx.lineWidth = 1;
+      
+      ctx.beginPath();
+      if (ctx.roundRect) {
+        ctx.roundRect(rectX, rectY, rectW, rectH, 5);
+      } else {
+        ctx.rect(rectX, rectY, rectW, rectH);
+      }
+      ctx.fill();
+      ctx.stroke();
+
+      // Write text inside capsule
+      ctx.fillStyle = isHovered ? '#ffffff' : 'rgba(226, 232, 240, 0.9)';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
+      ctx.fillText(labelText, x, rectY + rectH / 2 + 1); // small offset for baseline alignment
 
-      // Custom icon mapping
-      let emoji = '💼';
-      if (node.name === 'Hackathons') emoji = '🏆';
-      else if (node.name === 'Courses') emoji = '📚';
-      else if (node.name === 'Workshops') emoji = '🎓';
-      else if (node.name === 'Badges') emoji = '🔰';
-
-      ctx.fillText(emoji, x, y);
-
-      // Floating title labels below node
-      ctx.fillStyle = isHovered ? '#ffffff' : 'rgba(226, 232, 240, 0.8)';
-      ctx.font = `${isHovered ? 'bold' : 'normal'} ${Math.floor(13 * zScale + (isHovered ? 2 : 0))}px Space Grotesk`;
-      ctx.fillText(node.name, x, y + nodeSize + 18);
-
-      // Sub-label for stats
-      ctx.fillStyle = isHovered ? node.color : 'rgba(148, 163, 184, 0.6)';
-      ctx.font = `${Math.floor(11 * zScale)}px Courier New`;
-      ctx.fillText(node.stat, x, y + nodeSize + 32);
+      // Sub-label for stats below the capsule
+      ctx.fillStyle = isHovered ? node.color : 'rgba(148, 163, 184, 0.75)';
+      ctx.font = '10px Courier New';
+      ctx.fillText(node.stat, x, rectY + rectH + 11);
+      ctx.restore();
 
       return { x, y, size: nodeSize };
     };
@@ -400,31 +413,6 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
 
       const centerX = width / 2;
       const centerY = height / 2;
-
-      // Draw central star Sun core
-      const sunCoreGlow = ctx.createRadialGradient(centerX, centerY, 5, centerX, centerY, 42);
-      sunCoreGlow.addColorStop(0, '#ffffff');
-      sunCoreGlow.addColorStop(0.2, '#fef08a'); // yellow-200
-      sunCoreGlow.addColorStop(0.6, '#f97316'); // orange-500
-      sunCoreGlow.addColorStop(1, 'rgba(124, 45, 18, 0)'); // orange-900 transparent
-      
-      ctx.shadowBlur = 35;
-      ctx.shadowColor = '#f97316';
-      ctx.fillStyle = sunCoreGlow;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, 42, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0; // reset
-
-      // Sun outer corona glow
-      const coronaGlow = ctx.createRadialGradient(centerX, centerY, 15, centerX, centerY, 110);
-      coronaGlow.addColorStop(0, 'rgba(249, 115, 22, 0.25)');
-      coronaGlow.addColorStop(0.4, 'rgba(168, 85, 247, 0.08)');
-      coronaGlow.addColorStop(1, 'rgba(3, 0, 20, 0)');
-      ctx.fillStyle = coronaGlow;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, 110, 0, Math.PI * 2);
-      ctx.fill();
 
       // Render orbiting space dust particles
       orbitalParticles.forEach((p) => {
@@ -457,6 +445,50 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
         ctx.stroke();
       });
 
+      // Prepare nodes with their current angles and depth indicators
+      const speedFactors = [1.5, 1.2, 0.95, 0.75, 0.55];
+      const nodesWithAngle = nodes.map((node, idx) => {
+        const currentAngle = node.angle + angleOffset * speedFactors[idx];
+        const isBehind = Math.sin(currentAngle) < 0;
+        return { node, currentAngle, idx, isBehind };
+      });
+
+      // Record rendered positions for interaction checks
+      const renderedPositions: { x: number; y: number; size: number; originalIdx: number }[] = [];
+
+      // 1. Draw planets behind the Sun first
+      nodesWithAngle
+        .filter((p) => p.isBehind)
+        .forEach((p) => {
+          const pos = drawNode(p.node, p.currentAngle, p.idx);
+          renderedPositions.push({ ...pos, originalIdx: p.idx });
+        });
+
+      // 2. Draw central star Sun core (drawn on top of background planets)
+      const sunCoreGlow = ctx.createRadialGradient(centerX, centerY, 5, centerX, centerY, 42);
+      sunCoreGlow.addColorStop(0, '#ffffff');
+      sunCoreGlow.addColorStop(0.2, '#fef08a'); // yellow-200
+      sunCoreGlow.addColorStop(0.6, '#f97316'); // orange-500
+      sunCoreGlow.addColorStop(1, 'rgba(124, 45, 18, 0)'); // orange-900 transparent
+      
+      ctx.shadowBlur = 35;
+      ctx.shadowColor = '#f97316';
+      ctx.fillStyle = sunCoreGlow;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, 42, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0; // reset
+
+      // Sun outer corona glow
+      const coronaGlow = ctx.createRadialGradient(centerX, centerY, 15, centerX, centerY, 110);
+      coronaGlow.addColorStop(0, 'rgba(249, 115, 22, 0.25)');
+      coronaGlow.addColorStop(0.4, 'rgba(168, 85, 247, 0.08)');
+      coronaGlow.addColorStop(1, 'rgba(3, 0, 20, 0)');
+      ctx.fillStyle = coronaGlow;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, 110, 0, Math.PI * 2);
+      ctx.fill();
+
       // Core text display (in center of Sun)
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 13px Space Grotesk';
@@ -467,15 +499,13 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
       ctx.font = '9px monospace';
       ctx.fillText('CLICK PLANETS', centerX, centerY + 8);
 
-      // Render nodes and record their rendered positions
-      const renderedPositions: { x: number; y: number; size: number }[] = [];
-      nodes.forEach((node, idx) => {
-        // Closer planets orbit faster
-        const speedFactors = [1.5, 1.2, 0.95, 0.75, 0.55];
-        const currentAngle = node.angle + angleOffset * speedFactors[idx];
-        const pos = drawNode(node, currentAngle, idx);
-        renderedPositions.push(pos);
-      });
+      // 3. Draw planets in front of the Sun last (drawn on top of the Sun)
+      nodesWithAngle
+        .filter((p) => !p.isBehind)
+        .forEach((p) => {
+          const pos = drawNode(p.node, p.currentAngle, p.idx);
+          renderedPositions.push({ ...pos, originalIdx: p.idx });
+        });
 
       // Handle hover interactions
       let foundHoverIdx = -1;
@@ -485,7 +515,7 @@ export const Universe: React.FC<UniverseProps> = ({ onSelectCategory }) => {
         const dy = mousePos.y - pos.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < pos.size + 15) {
-          foundHoverIdx = i;
+          foundHoverIdx = pos.originalIdx;
           break;
         }
       }
