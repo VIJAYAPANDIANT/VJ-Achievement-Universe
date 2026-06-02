@@ -90,7 +90,7 @@ Below is the directory tree mapping the telemetry systems of the workspace:
 | **Vocation** | B.E. Computer Science and Engineering (Pre-Final Year Student) |
 | **Sector (Institution)** | SRM Easwari Engineering College |
 | **Coordinates (Location)** | Chennai, Tamil Nadu, India |
-| **Comm Channels** | 📧 [vijayapandian112007@gmail.com](mailto:vijayapandian112007@gmail.com) <br> 📞 +91 8610554060 |
+| **Comm Channels** | 📧 [vijayapandian112007@gmail.com](mailto:vijayapandian112007@gmail.com)|
 
 ### Interactive Coding & Social Nodes:
 
@@ -131,4 +131,3 @@ To run this telemetry HUD console on your local coordinates:
     npm run build
     ```
     Compiles the production-ready code bundles into the `dist` directory.
-
