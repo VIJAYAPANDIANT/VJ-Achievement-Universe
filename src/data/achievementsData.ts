@@ -121,6 +121,40 @@ export const achievementsData: Achievement[] = [
     description: 'Successfully completed the AI for Sustainability Virtual Internship organized by 1M1B, supported by AICTE, and in collaboration with IBM SkillsBuild. Gained experience in Agentic AI, RAG systems, and Responsible AI mapped to UN SDGs.',
     image: '/certificates/ibm_1m1b_ai_sustainability_internship.png'
   },
+  {
+    id: 'internship-1m1b-green',
+    title: '1M1B Green Internship',
+    issuer: '1M1B Green Skills Academy & AICTE',
+    category: 'Internships',
+    subCategory: 'Online Internships',
+    issueDate: '2026-03-15',
+    skills: ['Sustainable Mindset', 'Live Projects', 'Sustainability Strategy', 'Environmental Awareness'],
+    description: 'Successfully completed the 1M1B Green Internship in partnership with AICTE and supported by Salesforce. Focused on Developing a Sustainable Mindset and Live Project Work.',
+    image: '/certificates/1m1b_green_internship.png'
+  },
+  {
+    id: 'internship-tamizhan-skills-rise',
+    title: 'Web Development Intern (RISE)',
+    issuer: 'Tamizhan Skills',
+    category: 'Internships',
+    subCategory: 'Online Internships',
+    issueDate: '2026-04-05',
+    credentialId: 'TS-RISE-WD-2603854',
+    skills: ['Web Development', 'Frontend Development', 'HTML/CSS', 'JavaScript'],
+    description: 'Successfully completed the RISE Internship Program in the domain of Web Development from March 1, 2026 to March 31, 2026 at Tamizhan Skills.',
+    image: '/certificates/tamizhan_skills_web_dev_internship.png'
+  },
+  {
+    id: 'internship-elevate-labs-sql',
+    title: 'SQL Developer Intern',
+    issuer: 'Elevate Labs',
+    category: 'Internships',
+    subCategory: 'Online Internships',
+    issueDate: '2026-04-30',
+    skills: ['SQL', 'Database Design', 'Query Optimization', 'Analytical Thinking'],
+    description: 'Successfully completed the SQL Developer Internship Program at Elevate Labs from January 1, 2026 to April 30, 2026. Contributed to query optimization, database design, and structured data analysis.',
+    image: '/certificates/elevate_labs_sql_internship.png'
+  },
   // ─── HACKATHONS ────────────────────────────────────────────────────────────
   {
     id: 'hackathon-iiit-surat-dev-heat',
@@ -133,6 +167,42 @@ export const achievementsData: Achievement[] = [
     description: 'Participated in the Dev Heat Hackathon of Spring Fiesta organized by Indian Institute of Information Technology (IIIT), Surat, on Unstop.',
     place: 'Participation',
     image: '/certificates/iiit_surat_dev_heat_hackathon.png'
+  },
+  {
+    id: 'hackathon-enginow-adivya',
+    title: 'Adivya 2.0 - Developer Hackathon',
+    issuer: 'Enginow',
+    category: 'Hackathons',
+    subCategory: 'Tech Hackathons',
+    issueDate: '2026-03-30',
+    skills: ['Hackathon', 'Web Development', 'Software Architecture', 'Team Collaboration'],
+    description: 'Participated as part of Team vijayapandian112007 in Adivya 2.0 - Developer Hackathon organized by Enginow.',
+    place: 'Participation',
+    image: '/certificates/enginow_adivya_hackathon.png'
+  },
+  {
+    id: 'hackathon-enginow-round-1',
+    title: 'Round 1 | General Assessment (Hackathon)',
+    issuer: 'Enginow',
+    category: 'Hackathons',
+    subCategory: 'Tech Hackathons',
+    issueDate: '2026-03-10',
+    skills: ['Technical Assessment', 'Logical Reasoning', 'Coding Logic'],
+    description: 'Participated as part of Team vijayapandian112007 in Round 1 | General Assessment (Team Leader Round) organized by Enginow.',
+    place: 'Participation',
+    image: '/certificates/enginow_round_1_assessment.png'
+  },
+  {
+    id: 'hackathon-enginow-round-2',
+    title: 'Round 2 | Project Submission (Hackathon)',
+    issuer: 'Enginow',
+    category: 'Hackathons',
+    subCategory: 'Tech Hackathons',
+    issueDate: '2026-03-20',
+    skills: ['Project Presentation', 'Software Development', 'Product Prototyping'],
+    description: 'Participated as part of Team vijayapandian112007 in Round 2 | Submission of Original Projects of Complete Team by Leader organized by Enginow.',
+    place: 'Participation',
+    image: '/certificates/enginow_round_2_project_submission.png'
   },
   // ─── COURSES ───────────────────────────────────────────────────────────────
   {
@@ -622,6 +692,39 @@ export const achievementsData: Achievement[] = [
     description: 'Successfully completed the Database Management Systems course (2311CSC402J) from CodeTantra, in collaboration with Easwari Engineering College.',
     image: '/certificates/codetantra_dbms.png'
   },
+  {
+    id: 'course-nptel-iiot',
+    title: 'Introduction to Industry 4.0 and Industrial Internet of Things',
+    issuer: 'IIT Kharagpur (NPTEL)',
+    category: 'Courses',
+    subCategory: 'Online Courses',
+    issueDate: '2026-04-20',
+    skills: ['Industry 4.0', 'Industrial Internet of Things', 'IIoT', 'IoT', 'Smart Manufacturing'],
+    description: 'Successfully completed the 12-week NPTEL Online Certification course on Introduction to Industry 4.0 and Industrial Internet of Things, funded by the MoE, Govt. of India, and coordinated by IIT Kharagpur, with a consolidated score of 75% (Elite).',
+    image: '/certificates/nptel_iiot.png'
+  },
+  {
+    id: 'course-nptel-blockchain',
+    title: 'Blockchain and its Applications',
+    issuer: 'IIT Kharagpur (NPTEL)',
+    category: 'Courses',
+    subCategory: 'Online Courses',
+    issueDate: '2026-04-20',
+    skills: ['Blockchain', 'Distributed Ledgers', 'Cryptocurrency', 'Smart Contracts'],
+    description: 'Successfully completed the 12-week NPTEL Online Certification course on Blockchain and its Applications, funded by the MoE, Govt. of India, and coordinated by IIT Kharagpur, with a consolidated score of 57%.',
+    image: '/certificates/nptel_blockchain.png'
+  },
+  {
+    id: 'course-aws-cloud-practitioner-essentials',
+    title: 'AWS Cloud Practitioner Essentials',
+    issuer: 'AWS Training & Certification',
+    category: 'Courses',
+    subCategory: 'Professional Certificates',
+    issueDate: '2026-06-17',
+    skills: ['Cloud Computing', 'AWS', 'Cloud Infrastructure', 'Cloud Practitioner'],
+    description: 'Completed the AWS Cloud Practitioner Essentials course, validating fundamental understanding of the AWS Cloud platform, including basic global infrastructure, security and compliance, core services, and pricing models.',
+    image: '/certificates/aws_cloud_practitioner_essentials.png'
+  },
   // ─── WORKSHOPS ─────────────────────────────────────────────────────────────
   {
     id: 'workshop-aifortechies-python-ai',
@@ -808,6 +911,210 @@ export const achievementsData: Achievement[] = [
     place: 'Participation',
     image: '/certificates/elite_coders_winter_of_code.png'
   },
+  {
+    id: 'competition-ieee-gtbit-amentis',
+    title: 'AMENTIS: Chartering the Unknown',
+    issuer: 'IEEE GTBIT SB',
+    category: 'Competitions',
+    subCategory: 'Logical Competitions',
+    issueDate: '2026-04-10',
+    skills: ['Logical Reasoning', 'Problem Solving', 'Critical Thinking'],
+    description: 'Awarded a Certificate of Appreciation in recognition of active participation in AMENTIS: Chartering the Unknown, demonstrating logical reasoning, problem-solving, and determination.',
+    place: 'Participation',
+    image: '/certificates/ieee_amentis_appreciation.png'
+  },
+  {
+    id: 'competition-elite-coders-open-source-hackathon-preassess',
+    title: 'Open Source Hackathon - Pre-Assessment Round',
+    issuer: 'Elite Coders',
+    category: 'Competitions',
+    subCategory: 'Open Source Events',
+    issueDate: '2026-03-05',
+    skills: ['Open Source', 'Git', 'Technical Creativity', 'Problem Solving'],
+    description: 'Successfully qualified the Pre-Assessment Round of the Open Source Hackathon 2026, organized by Elite Coders.',
+    place: 'Participation',
+    image: '/certificates/elite_coders_hackathon_preassess.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-16',
+    title: 'Daily Quiz - Management: September Series (16-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-16',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Achieved 1482nd rank in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: '1482nd Rank',
+    image: '/certificates/unstop_management_sep_16.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-17',
+    title: 'Daily Quiz - Management: September Series (17-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-17',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Achieved 795th rank in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: '795th Rank',
+    image: '/certificates/unstop_management_sep_17.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-18',
+    title: 'Daily Quiz - Management: September Series (18-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-18',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Achieved 1414th rank in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: '1414th Rank',
+    image: '/certificates/unstop_management_sep_18.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-19',
+    title: 'Daily Quiz - Management: September Series (19-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-19',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Achieved 621st rank in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: '621st Rank',
+    image: '/certificates/unstop_management_sep_19.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-20',
+    title: 'Daily Quiz - Management: September Series (20-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-20',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Achieved 475th rank in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: '475th Rank',
+    image: '/certificates/unstop_management_sep_20.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-21',
+    title: 'Daily Quiz - Management: September Series (21-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-21',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Achieved 1312th rank in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: '1312th Rank',
+    image: '/certificates/unstop_management_sep_21.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-22',
+    title: 'Daily Quiz - Management: September Series (22-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-22',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_22.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-23',
+    title: 'Daily Quiz - Management: September Series (23-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-23',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_23.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-24',
+    title: 'Daily Quiz - Management: September Series (24-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-24',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_24.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-25',
+    title: 'Daily Quiz - Management: September Series (25-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-25',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_25.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-26',
+    title: 'Daily Quiz - Management: September Series (26-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-26',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_26.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-27',
+    title: 'Daily Quiz - Management: September Series (27-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-27',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_27.png'
+  },
+  {
+    id: 'competition-unstop-management-daily-quiz-28',
+    title: 'Daily Quiz - Management: September Series (28-09-2025)',
+    issuer: 'Unstop',
+    category: 'Competitions',
+    subCategory: 'Tech Quizzes',
+    issueDate: '2025-09-28',
+    skills: ['Management Concepts', 'General Knowledge', 'Problem Solving'],
+    description: 'Participated in the Daily Quiz of Management: September Series organized by Unstop.',
+    place: 'Participation',
+    image: '/certificates/unstop_management_sep_28.png'
+  },
+  {
+    id: 'competition-vu-navratri-codethon-2025-day1',
+    title: 'Navratri Codethon 2025 - Day 1: Algorithms',
+    issuer: 'Vishwakarma University (VU)',
+    category: 'Competitions',
+    subCategory: 'Coding Contests',
+    issueDate: '2025-10-22',
+    skills: ['Algorithms', 'Competitive Programming', 'Problem Solving', 'Data Structures'],
+    description: 'Participated in Day 1 of the Navratri Codethon 2025 focused on Algorithms (Shailaputri - Strength & Beginnings), organized by Vishwakarma University (VU), Pune.',
+    place: 'Participation',
+    image: '/certificates/vu_navratri_codethon_day1.png'
+  },
+  {
+    id: 'competition-vu-navratri-codethon-2025-day2',
+    title: 'Navratri Codethon 2025 - Day 2: Data Structures',
+    issuer: 'Vishwakarma University (VU)',
+    category: 'Competitions',
+    subCategory: 'Coding Contests',
+    issueDate: '2025-10-23',
+    skills: ['Data Structures', 'Competitive Programming', 'Problem Solving', 'Algorithms'],
+    description: 'Participated in Day 2 of the Navratri Codethon 2025 focused on Data Structures (Brahmacharini - Perseverance & Devotion), organized by Vishwakarma University (VU), Pune.',
+    place: 'Participation',
+    image: '/certificates/vu_navratri_codethon_day2.png'
+  },
   // ─── BADGES ────────────────────────────────────────────────────────────────
   {
     id: 'badge-codechef-bronze',
@@ -860,5 +1167,44 @@ export const achievementsData: Achievement[] = [
     rarity: 'legendary',
     badgeIcon: 'gcp_ai',
     image: '/certificates/leetcode_50_days_2026.png'
+  },
+  {
+    id: 'badge-ibm-skillsbuild-intro-llm',
+    title: 'Introduction to Large Language Models',
+    issuer: 'IBM SkillsBuild',
+    category: 'Badges',
+    subCategory: 'Artificial Intelligence',
+    issueDate: '2026-06-20',
+    skills: ['Large Language Models', 'Generative AI', 'Deep Learning', 'Natural Language Processing'],
+    description: 'Earned for successfully completing the Introduction to Large Language Models course on IBM SkillsBuild, validating foundational knowledge of LLM architectures, training, and use cases.',
+    rarity: 'rare',
+    badgeIcon: 'deep_learning',
+    image: '/certificates/ibm_skillsbuild_intro_llm.png'
+  },
+  {
+    id: 'badge-ibm-skillsbuild-foundations-genai',
+    title: 'Foundations in Generative AI',
+    issuer: 'IBM SkillsBuild',
+    category: 'Badges',
+    subCategory: 'Artificial Intelligence',
+    issueDate: '2026-06-20',
+    skills: ['Generative AI', 'Foundational Models', 'Prompt Engineering', 'AI Applications'],
+    description: 'Earned for completing the Foundations in Generative AI badge course, validating key concepts of foundational models and techniques of Generative AI.',
+    rarity: 'rare',
+    badgeIcon: 'gcp_ai',
+    image: '/certificates/ibm_skillsbuild_foundations_genai.png'
+  },
+  {
+    id: 'badge-ibm-skillsbuild-ethical-considerations-genai',
+    title: 'Ethical Considerations for Generative AI',
+    issuer: 'IBM SkillsBuild',
+    category: 'Badges',
+    subCategory: 'Artificial Intelligence',
+    issueDate: '2026-06-20',
+    skills: ['AI Ethics', 'Generative AI', 'Responsible AI', 'AI Governance'],
+    description: 'Earned for completing the Ethical Considerations for Generative AI course on IBM SkillsBuild, verifying understanding of biases, hallucinations, privacy concerns, and responsible AI deployment principles.',
+    rarity: 'rare',
+    badgeIcon: 'azure_dev',
+    image: '/certificates/ibm_skillsbuild_ethical_considerations_genai.png'
   }
 ];
